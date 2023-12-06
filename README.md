@@ -1,4 +1,5 @@
-# HTML pada halaman about.html
+# HTML pada halaman login.html dan about.html
+
 ## Deklarasi Dokumen HTML:
 
     html
@@ -30,12 +31,46 @@ lang="en" menandakan bahwa dokumen menggunakan bahasa Inggris.
         </nav>
     </header>
   Berisi class untuk menuliskan welcome dan navbar
-  
+
 ### Elemen body:
     <body>
         <!-- Konten halaman -->
     </body>
+    
+### Elemen <footer>:
+    <footer>
+        © 2023 BTJ Academy
+    </footer>
+Berisi informasi hak cipta.
 
+## Body login.html
+        <section class="content-form">
+                <h2>Welcome to Our Landing Page</h2>
+                <p>Please login to access other features.</p>
+        
+                <div class="content-login">
+                    <form action="" method="post">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required> 
+                        <br>
+            
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required> 
+                        <br>
+            
+                        <button type="submit">Login</button> 
+                        <br>
+                    </form>
+            
+                    <div class="imcap">
+                        <image src="img.avif" alt="gambar" style="width: 50%;"></image>
+                        <p>"The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt</p>
+                    </div>
+                </div>     
+            </section>
+
+Pada section content-fom terdapat judul h2 dan konten serta terdapat class content-login dengan isi berupa form untuk mengisikan username dan password. Juga terdapat class imcap yang berisi gambar serta konten berupa quotes.
+## Body about.html:
 #### Elemen article:
 <article>
     <!-- Konten artikel -->
@@ -101,15 +136,12 @@ table: Menandai tabel.
 tr: Menandai baris dalam tabel.
 td: Menandai sel dalam tabel.
   
-### Elemen <section> Lainnya:
+###### 4. Motto Section:
     <section class="motto-section">
       <h3>My Motto?</h3>
       <p>"Do what you love because there are so many reasons to be happy."</p>
     </section>
 Menandai bagian dengan motto.
   
-### Elemen <footer>:
-    <footer>
-        © 2023 BTJ Academy
-    </footer>
-Berisi informasi hak cipta.
+
+
