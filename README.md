@@ -144,7 +144,7 @@ td: Menandai sel dalam tabel.
 Menandai bagian dengan motto.
   
 
-# ----------------------------------------------------------
+# ----------------------------------------------------
 # CSS
 
 ## Header, Nav, Body, dan Footer
@@ -152,7 +152,7 @@ Menandai bagian dengan motto.
 - Mengatur font family, serta menghapus margin dan padding secara default yang diberikan oleh browser ke elemen body.
 - Mengatur elemen body sebagai flex agar fleksible, serta diatur menjadi kolom
 - Menetapkan tinggi minimum elemen body menjadi 100% dari tinggi viewport
-- 
+  
 ### Setting h2, h3, p
 #### h2 
 - Mengatur warna h2
@@ -180,7 +180,7 @@ Menandai bagian dengan motto.
 - Mengubah warna teks tautan menjadi biru saat dihover.
 - 'text-decoration: none;:' Tetap menghilangkan dekorasi bawaan tautan saat dihover.
 - Memberikan margin pada sisi kiri dan kanan
-- 
+  
 ### Setting Footer
 - Mengatur warna background, warna tulisan, tata letak tulisan, serta padding, dan margin di setting auto 
 
@@ -255,7 +255,7 @@ Menandai bagian dengan motto.
 - Mengatur z-index sebesar 1 agar bisa menempatkan foto di atas elemen objek (dengan index z lebih rendah)
   
 #### .profile-picture::before -> Membuat objek dibelakang foto profil
-- Untuk membuat objek pseudo kosong menggunakan 'content: "";:' 
+- Untuk membuat objek pseudo kosong menggunakan 'content: "";' 
 - Mengatur posisi absolut agar objek presisi relatif terhadap class untuk foto profile  
 - Memberikan lebar elemen pseudo sebesar 100% dari class untuk foto profile 
 - Memberikan tinggi elemen pseudo sebesar 70% dari class untuk foto profile 
