@@ -512,87 +512,123 @@ Menandai bagian dengan motto.
 ## Media Screen
 ### Setting small screen with Media Screen
     @media (max-width: 768px) {
-        h2 {
-            font-size: 16px;
-        }
-        
-        h3 {
-            font-size: 14px;
-        }
-        
-        h4 {
-            font-size: 12px;
-        }
-        
-        p {
-            font-size: 12px;
-        }
-    
-        .login-section{
-            flex-direction:column;
-        }
-    
-        form h2{
-            margin:30px 0 0 0;
-            font-size: 14px;
-        }
-    
-        form label{
-            font-size: 12px;
-        }
-    
-        form input{
-            font-size: 12px;
-        }
-    
-        form button{
-            font-size: 12px;
-        }
-    
-        header{
-            font-size: 16px;
-        }
-        .logo span{
-            font-size: 16px;
-        }
-    
-        footer{
-            font-size: 14px;
-        }
-    
-        .welcome-text{
-            margin-bottom: 0;
-        }
-    
-        .container {
-            flex-direction: column; /* Setting display elements in one column on small screens */
-        }
-    
-        .profile-picture,
-        .content {
-            flex-basis: 100%; /* Both take 100% width on small screens */
-            max-width: 100%; /* Prevent exceeding screen width */
-            margin: 10px; /* Add margin left and right between icons */
-        }
-    
-        .content {    
-            margin-top: 25px;
-            border-radius: 8px;
-        }
-    
-        .content::before {
-            content: "";            
-            position: absolute;
-            top: -25px;
-            left: 45%; /* Center content::before horizontally */
-            transform: rotate(90deg); /* Rotate content::before parallel to the content side */
-        }
-    
-        .edu-work-table caption {
-            font-size: 14px;
-        }
-    
-        .edu-work-table th, .edu-work-table td {
-            font-size: 12px;
-        }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        width: 25%;
+        background-color: #fff;
+        z-index: 3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 5px 5px;
+        font-size:14px;
     }
+
+    .nav-links a {
+        text-align: center;
+        padding: 15px;
+        display: block;
+        color: #ff725c;
+        text-decoration: none;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ff725c;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+    
+    h3 {
+        font-size: 14px;
+    }
+    
+    h4 {
+        font-size: 12px;
+    }
+    
+    p {
+        font-size: 12px;
+    }
+
+    .login-section{
+        flex-direction:column;
+    }
+
+    form h2{
+        margin:30px 0 0 0;
+        font-size: 14px;
+    }
+
+    form label{
+        font-size: 12px;
+    }
+
+    form input{
+        font-size: 12px;
+    }
+
+    form button{
+        font-size: 12px;
+    }
+
+    header{
+        font-size: 16px;
+    }
+    .logo span{
+        font-size: 16px;
+    }
+
+    footer{
+        font-size: 14px;
+    }
+
+    .welcome-text{
+        margin-bottom: 0;
+    }
+
+    .container {
+        flex-direction: column; 
+    }
+
+    .profile-picture,
+    .content {
+        flex-basis: 100%; 
+        max-width: 100%; 
+        margin: 10px; 
+    }
+
+    .content {
+        margin-top: 25px;
+        border-radius: 8px;
+    }
+
+    .content::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 45%; 
+        transform: rotate(90deg); 
+    }
+
+    .edu-work-table caption {
+        font-size: 14px;
+    }
+
+    .edu-work-table th, .edu-work-table td {
+        font-size: 12px;
+    }
+}
