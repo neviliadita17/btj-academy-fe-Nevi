@@ -325,3 +325,274 @@ Menandai bagian dengan motto.
 - Memberikan padding 20px 
 - Mengatur margin atas 20px
 - Mengatur teks menjadi rata tengah
+
+# ----------------------------------------------------
+
+# Update day 3 to responsive website
+## CSS
+### Add background and layout CSS to layout content and add a background behind the layout
+    .background {
+        background: rgb(255,114,92);
+        background: linear-gradient(317deg, rgba(255,114,92,1) 36%, rgba(55,90,100,1) 36%);         display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .layout {
+        background-color: #fff; /* White box color */
+        border-radius: 20px; /* White box radius */
+        overflow-y: auto; /* Add vertical scrollbar */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow effect for the white box */
+        width: 90%; /* Optional: Adjust the width as needed */
+        height: 95vh; /* Use viewport height */
+        display: flex;
+        flex-direction: column;
+    }
+### Change color palette to #ff725c and #375a64
+
+## Header
+### Setting header to flex
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        color: #fff;
+        padding: 10px;
+        height: 40px; /* Fixed header size */
+    }
+
+### Adding logo to header
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo img {
+        width: 75px; /* Change logo size smaller */
+        height: auto;
+        margin: 0 20px; /* Add margin left and right */
+    }
+    
+    .logo span {
+        font-weight: bold;
+        font-size: 1.5rem; /* Adjust text size */
+        color: #ff725c; /* Blue color */
+        display: flex;
+        align-items: center;
+        height: 100%; /* Center text vertically */
+    }
+
+### Setting nav to flex
+    nav {
+        display: flex; /* Mengatur menu navigasi menjadi bersebelahan */
+        align-items: center; /* Tengahkan menu nav */
+        margin: 0 20px; /* Add margin left and right */
+    
+    }
+
+## Login Page
+### Setting login-section
+    .login-section {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 30px; 
+    }
+
+### Setting .content-login and .content-form to make both in one row and setting size
+    .content-login,
+    .content-form {
+        flex-basis: 48%; /* Both in one row */
+        padding: 10px;
+    
+    }
+    
+    .content-login {
+        flex-basis: 55%; /* Size for content-login */
+    }
+    
+    .content-form {
+        flex-basis: 45%; /* Size for content-form */
+        
+    }
+
+### Addjust class imcap and add .content-login
+    .imcap {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .imcap img {
+        width: 70%;
+    }
+    
+    .imcap p {
+        margin-top: 10px;
+        margin-left: 10px;
+    
+    }
+
+    .content-login {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+### Modification form elements
+    form {
+        width: 100%; /* Form width 100% from parents */
+        max-width: 500px; /* set max-width form */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 50%; /* adjust form height */
+    }
+
+## About Page
+### Adding image background on .about-me-section
+    .about-me-section {
+        background-image: url('bg-about-me.png');
+        background-size: cover; /* Adjust the image to cover the element */
+    background-position: center; /* Adjust the image position */
+    }
+
+### Make container display in row
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+    }
+
+### Change flex-basis to lower and adjust
+    .content {
+        flex-basis: 40%;
+        position: relative;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 0 8px 8px 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        z-index: 2;
+    }
+
+### Adding get in touch for information contact icons
+    .get-in-touch-icons {
+        text-align: center; /* Center icon */
+    }
+    
+    .get-in-touch-icons a {
+        text-decoration: none; 
+        margin: 0 10px; /* Add spaces between icons */
+    }
+
+## Animation
+### Add animation for aboutme on about-me-section
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+    }
+
+## Media Screen
+### Setting small screen with Media Screen
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 16px;
+        }
+        
+        h3 {
+            font-size: 14px;
+        }
+        
+        h4 {
+            font-size: 12px;
+        }
+        
+        p {
+            font-size: 12px;
+        }
+    
+        .login-section{
+            flex-direction:column;
+        }
+    
+        form h2{
+            margin:30px 0 0 0;
+            font-size: 14px;
+        }
+    
+        form label{
+            font-size: 12px;
+        }
+    
+        form input{
+            font-size: 12px;
+        }
+    
+        form button{
+            font-size: 12px;
+        }
+    
+        header{
+            font-size: 16px;
+        }
+        .logo span{
+            font-size: 16px;
+        }
+    
+        footer{
+            font-size: 14px;
+        }
+    
+        .welcome-text{
+            margin-bottom: 0;
+        }
+    
+        .container {
+            flex-direction: column; /* Setting display elements in one column on small screens */
+        }
+    
+        .profile-picture,
+        .content {
+            flex-basis: 100%; /* Both take 100% width on small screens */
+            max-width: 100%; /* Prevent exceeding screen width */
+            margin: 10px; /* Add margin left and right between icons */
+        }
+    
+        .content {    
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+    
+        .content::before {
+            content: "";            
+            position: absolute;
+            top: -25px;
+            left: 45%; /* Center content::before horizontally */
+            transform: rotate(90deg); /* Rotate content::before parallel to the content side */
+        }
+    
+        .edu-work-table caption {
+            font-size: 14px;
+        }
+    
+        .edu-work-table th, .edu-work-table td {
+            font-size: 12px;
+        }
+    }
