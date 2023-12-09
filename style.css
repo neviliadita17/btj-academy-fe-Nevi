@@ -1,20 +1,42 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+.background {
+    background: rgb(255,114,92);
+    background: linear-gradient(317deg, rgba(255,114,92,1) 36%, rgba(55,90,100,1) 36%);   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.layout {
+    background-color: #fff; 
+    border-radius: 20px; 
+    overflow-y: auto; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    width: 90%; 
+    height: 95vh; 
+    display:flex;
+    flex-direction: column; 
+}
+
 h2 {
-    color: #3366cc;
+    color: #ff725c;
 }
 
 h3 {
-    color: #3366cc;
+    color: #ff725c;
     margin-top: 20px;
+}
+
+h4 {
+    color: #375a64;
 }
 
 p {
@@ -24,119 +46,180 @@ p {
 /* ------------------------------------- */
 /* Header */
 header {
-    background-color: #3366cc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
     color: #fff;
-    text-align: center;
+    padding: 10px;
+    height: 40px; 
 }
 
-/* Nav */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 75px; 
+    height: auto;
+    margin: 0 20px; 
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.5rem; 
+    color: #ff725c; 
+    display: flex;
+    align-items: center;
+    height: 100%; 
+}
+
 nav {
-    background-color: #333; 
-    color: #fff; 
-    padding: 5px;
-    text-align: center;
+    display: flex; 
+    align-items: center; 
+    margin: 0 20px; 
+
 }
 
 nav a {
-    color: #fff;
+    color: #ff725c;
     text-decoration: none;
     margin: 0 10px;
 }
 
-nav a:hover{
-    color: #3366cc;
+nav a:hover {
+    color: #375a64;
     text-decoration: none;
     margin: 0 10px;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
+    background-color: #fff;
+    color: #375a64;
+    max-height:100%;
     padding: 10px;
     margin-top: auto;
+    text-align: center;
 }
 
 /* ------------------------------------- */
 /* Login Page*/
 
 /* Login container */
-.content-form,
-.content-login {
+.login-section {
+    flex: 1;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 30px; 
+}
+
+.content-login,
+.content-form {
+    flex-basis: 48%; 
     padding: 10px;
+
+}
+
+.content-login {
+    flex-basis: 55%; 
+}
+
+.content-form {
+    flex-basis: 45%; 
+    
+}
+
+.content-login {
+    margin: auto;
 }
 
 .imcap {
+    text-align: center;
     margin-top: 20px;
+}
+
+.imcap img {
+    width: 70%;
 }
 
 .imcap p {
     margin-top: 10px;
+    margin-left: 10px;
 }
 
-/* Form elements */
+.content-login {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-text {
+    margin-bottom: 20px;
+}
+
 form {
+    width: 100%; 
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 25px;
-    padding: 20px;
+    padding: 60px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 300px;
+    height: 50%; 
 }
 
 form label {
     display: block;
     margin-bottom: 10px;
-    text-align: left;
 }
 
 form input {
     width: 100%;
     padding: 8px;
-    margin-bottom: 15px;
     box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 form button {
     width: 100%;
-    background-color: #3366cc;
+    background-color: #375a64;
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 form button:hover {
-    background-color: #004080;
+    background-color: #ff725c;
 }
-
-.content-login {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center; 
-}
-
-
-
 /* ------------------------------------------- */
 
 /* About Page */
 .about-me-section {
-    background: rgb(183, 227, 255);
-    background: linear-gradient(307deg, rgba(183, 227, 255, 1) 0%, rgba(108, 121, 255, 1) 22%, rgba(255, 210, 150, 1) 100%);
-    padding: 20px;
+    background-image: url('bg-about-me.png');
+    background-size: cover; 
+    background-position: center; 
 }
 
 .container {
     display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
     position: relative;
+    animation: slideInFromLeft 1s ease-out; 
 }
 
 .profile-picture {
@@ -164,14 +247,13 @@ form button:hover {
 }
 
 .content {
-    flex-basis: 70%;
+    flex-basis: 40%;
     position: relative;
-    padding: 30px;
+    padding: 20px;
     background-color: #f4f4f4;
     border-radius: 0 8px 8px 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 750px;
-    margin: 0 auto; 
+    max-width: 400px;
     z-index: 2;
 }
 
@@ -196,7 +278,17 @@ form button:hover {
     text-align: center; 
 }
 
+.get-in-touch-icons {
+    text-align: center; 
+}
+
+.get-in-touch-icons a {
+    text-decoration: none; 
+    margin: 0 10px; 
+}
+
 .edu-work-table {
+    background-color: #F4F4F4;
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
@@ -208,18 +300,14 @@ form button:hover {
     font-weight: bold;
     font-size: 1.1em;
     margin-bottom: 10px;
-    color: #3366cc;
+    color: #ff725c;
 }
 
 .edu-work-table th, .edu-work-table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
-}
-
-.edu-work-table th {
-    background-color: #3366cc;
-    color: #fff;
+    color: #7d7d87;
 }
 
 .motto-section {
@@ -228,4 +316,101 @@ form button:hover {
     padding: 20px;
     margin-top: 20px;
     text-align: center; 
+}
+
+/* Animation for About me Container */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+}
+
+/* Media Screen for width 768px and lower */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 16px;
+    }
+    
+    h3 {
+        font-size: 14px;
+    }
+    
+    h4 {
+        font-size: 12px;
+    }
+    
+    p {
+        font-size: 12px;
+    }
+
+    .login-section{
+        flex-direction:column;
+    }
+
+    form h2{
+        margin:30px 0 0 0;
+        font-size: 14px;
+    }
+
+    form label{
+        font-size: 12px;
+    }
+
+    form input{
+        font-size: 12px;
+    }
+
+    form button{
+        font-size: 12px;
+    }
+
+    header{
+        font-size: 16px;
+    }
+    .logo span{
+        font-size: 16px;
+    }
+
+    footer{
+        font-size: 14px;
+    }
+
+    .welcome-text{
+        margin-bottom: 0;
+    }
+
+    .container {
+        flex-direction: column; 
+    }
+
+    .profile-picture,
+    .content {
+        flex-basis: 100%; 
+        max-width: 100%; 
+        margin: 10px; 
+    }
+
+    .content {
+        margin-top: 25px;
+        border-radius: 8px;
+    }
+
+    .content::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 45%; 
+        transform: rotate(90deg); 
+    }
+
+    .edu-work-table caption {
+        font-size: 14px;
+    }
+
+    .edu-work-table th, .edu-work-table td {
+        font-size: 12px;
+    }
 }
