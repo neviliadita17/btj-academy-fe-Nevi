@@ -326,6 +326,7 @@ Menandai bagian dengan motto.
 - Mengatur margin atas 20px
 - Mengatur teks menjadi rata tengah
 
+# ----------------------------------------------------
 
 # Update day 3 to responsive website
 ## CSS
