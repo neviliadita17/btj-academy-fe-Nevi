@@ -16,7 +16,12 @@
                 <div class="logo">
                     <img src="src/6333043.jpg" alt="logo"><span>Welcome</span>
                 </div>
-                <nav>
+                <div class="burger" onclick="toggleNav()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <nav class="nav-links" id="navLinks">
                     <a href="login.html">Home</a>
                     <a href="about.html">About</a>
                 </nav>
@@ -89,5 +94,12 @@
             </footer>
         </div>
     </div>
+
+    <script>
+        function toggleNav() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.style.display === "none" || navLinks.style.display === "" ? navLinks.style.display = "flex" : navLinks.style.display = "none";
+        }
+    </script>
 </body>
 </html>
