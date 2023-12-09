@@ -330,6 +330,42 @@ form button:hover {
 
 /* Media Screen for width 768px and lower */
 @media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        width: 25%;
+        background-color: #fff;
+        z-index: 3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 5px 5px;
+        font-size:14px;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 15px;
+        display: block;
+        color: #ff725c;
+        text-decoration: none;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ff725c;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
     h2 {
         font-size: 16px;
     }
