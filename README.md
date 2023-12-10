@@ -632,3 +632,26 @@ Menandai bagian dengan motto.
         font-size: 12px;
     }
 }
+
+## Note : Add Script for navbar on small screen
+    <script>
+        function toggleNav() {
+            var navLinks = document.getElementById("navLinks");
+    
+            if (window.innerWidth <= 768) {
+                // Jika layar <= 768px, atur display sesuai dengan keadaan saat ini
+                navLinks.style.display = (navLinks.style.display === "flex" || navLinks.style.display === "") ? "none" : "flex";
+            }
+        }
+    
+        // Menangani perubahan lebar layar untuk menyembunyikan menu saat lebar layar diperbesar
+        window.addEventListener('resize', function () {
+            var navLinks = document.getElementById("navLinks");
+            if (window.innerWidth > 768) {
+                navLinks.style.display = "flex";
+            } else {
+                // Jika layar <= 768px, pastikan menu ditutup
+                navLinks.style.display = "none";
+            }
+        });
+    </script>
