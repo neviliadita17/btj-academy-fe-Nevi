@@ -108,8 +108,24 @@ Add `oninput="validateUsername()"` to the HTML input for the username.
 ### Password
 Add `oninput="validatePassword()"` to the HTML input for the password.
 
-## // If both username and password are filled, upon submission, the page will be redirected to the about page.
+## If both username and password are filled, upon submission, the page will be redirected to the about page.
+    function validateForm(event) {
+        event.preventDefault();
+        validateUsername();
+        validatePassword();
+    
+        // Ambil pesan kesalahan dari kedua validasi
+        var usernameErrorMessage = document.getElementById('usernameError').innerHTML;
+        var passwordErrorMessage = document.getElementById('passwordError').innerHTML;
+    
+        // Cek apakah tidak ada pesan kesalahan
+        if (usernameErrorMessage === "" && passwordErrorMessage === "") {
+            // Jika tidak ada kesalahan, arahkan ke halaman about.html
+            window.location.href = 'about.html';
+        }
+    }
 
+In the validateForm function, after performing validations in the validateUsername() and validatePassword() functions, a check is made. If there are no error messages (both validations are successful), then `window.location.href = 'about.html';` is used to redirect the user to the **about.html** page.
 ## Add a warning if capslock on the keyboard is ON. The warning disappears if caps lock is OFF.
     function checkCapsLock(event) {
         var capsLockWarning = document.getElementById("capsLockWarning");
