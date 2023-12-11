@@ -655,3 +655,40 @@ Menandai bagian dengan motto.
             }
         });
     </script>
+
+# Java Script - Day 4
+## Ketika logo disebelah welcome di click maka logo akan ada efek rotasi 360 derajat 
+
+## Tambahkan feature show password, di mana saat di checked akan menampilkan text pada field password
+    function showPassword() {
+        var passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    }
+
+## Tambahkan form validation dan teks error ketika submit form dilakukan dan username kosong atau ketentuan password salah
+#### Note : Ketentuan password : minimal 1 huruf besar, 1 huruf kecil, 1 number, 1 symbol)
+
+### Username
+
+### Password
+
+
+## Form validation untuk ketentuan password dilakukan juga saat mengetik/menginput password. 
+
+## Jika username dan password terisi, saat submit, page akan dialihkan menuju about page
+
+## Tambahkan warning jika caps lock pada keyboard ON, warning hilang jika caps lock Off 
+    function checkCapsLock(event) {
+        var capsLockWarning = document.getElementById("capsLockWarning");
+        // Mendapatkan status Caps Lock dari event
+        var isCapsLockOn = event.getModifierState && event.getModifierState("CapsLock");
+        // Menampilkan atau menyembunyikan pesan peringatan
+        capsLockWarning.style.display = isCapsLockOn ? "inline" : "none";
+    }
+
+Tambahkan id="capsLockWarning" pada label showPasswordLabel                      
+    <span id="capsLockWarning" class="warning-message"><i class='bx bxs-error'></i> Caps Lock is ON</span> 
