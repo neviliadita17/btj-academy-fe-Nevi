@@ -1,5 +1,5 @@
 # Java Script - Day 4
-#### Note : For readme day 1,2,3 please checkon branch day 3
+#### Note : For readme day 1, 2, 3 please check on branch day 3
 
 ## //When the logo next to the welcome message is clicked, it will have a 360-degree rotation effect.
 
