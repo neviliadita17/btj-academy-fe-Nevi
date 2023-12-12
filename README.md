@@ -1,7 +1,46 @@
 # Java Script - Day 4
 #### Note : For readme day 1, 2, 3 please check on branch day 3
 
-## //When the logo next to the welcome message is clicked, it will have a 360-degree rotation effect.
+## When the logo next to the welcome message is clicked, it will have a 360-degree rotation effect.
+Add HTML 'onclick="rotateLogo()"' on div logo and 'id="logoImage"' on img for logo :
+
+    <div id="logo" class="logo" onclick="rotateLogo()">
+        <img id="logoImage" src="src/6333043.jpg" alt="logo" ><span>Welcome</span>
+    </div>
+    
+Add CSS :
+
+    .rotate {
+        transition: transform 0.5s ease;
+    }
+    
+Add Script :
+
+    var rotationCount = 0;
+    
+    function rotateLogo() {
+        // Get the image element
+        var logoImage = document.getElementById('logoImage');
+    
+        // Add the "rotate" class to trigger the rotation animation
+        logoImage.classList.add('rotate');
+    
+        // Save the current rotation count
+        rotationCount++;
+    
+        // Calculate the rotation angle based on the click count
+        var rotationAngle = 360 * rotationCount;
+    
+        // Set the rotation transformation based on the rotation angle
+        logoImage.style.transform = 'rotate(' + rotationAngle + 'deg)';
+    
+        // Remove the "rotate" class after the animation is complete
+        setTimeout(function() {
+            logoImage.classList.remove('rotate');
+        }, 500); // Adjust according to the CSS transition duration
+    }
+
+**var rotationCount = 0;** is used to keep track of how many times the logo has been rotated. This is useful so that every time the logo is clicked, the rotation angle is updated by multiplying the click count by 360 degrees. 
 
 ## Add show password feature, where checking the checkbox will display the text in the password field.
 Script:
