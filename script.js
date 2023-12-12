@@ -112,3 +112,9 @@ function checkCapsLock(event) {
     // Menampilkan atau menyembunyikan pesan peringatan
     capsLockWarning.style.display = isCapsLockOn ? "inline" : "none";
 }
+
+// Zoom Profile Picture on aboutme 
+function zoomImage() {
+    var profilePicture = document.querySelector('.profile-picture');
+    profilePicture.classList.toggle('zoomed');
+}
