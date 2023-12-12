@@ -271,6 +271,14 @@ form button:hover {
     border-radius: 10%; 
 }
 
+.profile-picture img {
+    transition: transform 0.5s ease;
+}
+
+.profile-picture.zoomed img {
+    transform: scale(1.5); 
+}
+
 .content {
     flex-basis: 40%;
     position: relative;
