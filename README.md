@@ -177,8 +177,29 @@ Add to HTML input for username and password
 
     onkeydown="checkCapsLock(event)"
 
-Add id="capsLockWarning" to the showPasswordLabel label to create the warning display 
+Add `id="capsLockWarning"` to the showPasswordLabel label to create the warning display 
 
     <span id="capsLockWarning" class="warning-message"><i class='bx bxs-error'></i> Caps Lock is ON</span> 
 
+## Add zoom animation image profile on aboutme.html
+Add `onclick="zoomImage()"` on HTML figure about-me-section
+
+    <figure class="profile-picture" onclick="zoomImage()">
+        <img src="src/foto__1___1_-removebg-preview.png" alt="Profile Image">
+
+Add CSS to setting transition and zoom scale
+
+    .profile-picture img {
+        transition: transform 0.5s ease;
+    }
     
+    .profile-picture.zoomed img {
+        transform: scale(1.5); /* Sesuaikan faktor zoom sesuai kebutuhan */
+    }
+
+Add JavaScript
+
+    function zoomImage() {
+        var profilePicture = document.querySelector('.profile-picture');
+        profilePicture.classList.toggle('zoomed');
+    }
