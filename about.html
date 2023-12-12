@@ -14,8 +14,8 @@
     <div class="background">
         <div class="layout">
             <header>
-                <div class="logo">
-                    <img src="src/6333043.jpg" alt="logo"><span>Welcome</span>
+                <div id="logo" class="logo" onclick="rotateLogo()">
+                    <img id="logoImage" src="src/6333043.jpg" alt="logo" ><span>Welcome</span>
                 </div>
                 <div class="burger" onclick="toggleNav()">
                     <div class="bar"></div>
@@ -31,7 +31,7 @@
             <article>
                 <section class="about-me-section">
                     <div class="container">
-                        <figure class="profile-picture">
+                        <figure class="profile-picture" onclick="zoomImage()">
                             <img src="src/foto__1___1_-removebg-preview.png" alt="Profile Image">
                             <!-- <figcaption>Profile Picture</figcaption> -->
                         </figure>
