@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
 
     <title>BTJ Academy</title>
@@ -15,13 +17,11 @@
     <div class="background">
         <div class="layout">
             <header>
-                <div id="logo" class="logo" onclick="rotateLogo()">
+                <div id="logo" class="logo">
                     <img id="logoImage" src="src/6333043.jpg" alt="logo" ><span>Welcome</span>
                 </div>
-                <!-- <div class="welcome-header">
-                    <h2>Welcome</h2>
-                </div> -->
-                <div class="burger" onclick="toggleNav()">
+
+                <div class="burger">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -35,7 +35,7 @@
             <section class="login-section">
                 <div class="content-login">
 
-                    <form onsubmit="validateForm(event)" action="about.html" method="post">
+                    <form id="form-login" action="about.html" method="post">
                         <div class="welcome-text-form">
                             <h2>Welcome to Our Landing Page</h2>
                             <p>Please login to access other features.</p>
@@ -43,18 +43,16 @@
 
                         <!-- Tambahkan elemen div baru untuk menampilkan pesan notifikasi -->
                         <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" placeholder="Enter your username" 
-                                oninput="validateUsername()" onkeydown="checkCapsLock(event)">
+                            <input type="text" id="username" name="username" placeholder="Enter your username">
                             <span id="usernameError" class="error-message"></span>
 
                         <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" 
-                                oninput="validatePassword()" onkeydown="checkCapsLock(event)">
+                            <input type="password" id="password" name="password" placeholder="Enter your password">
                             <span id="passwordError" class="error-message"></span>
 
                         <label id="showPasswordLabel">
                             <span id="capsLockWarning" class="warning-message"><i class='bx bxs-error'></i> Caps Lock is ON</span> <br>
-                            <input type="checkbox" onclick="showPassword()">Show Password</label>
+                            <input id="showPasswordCheckbox" type="checkbox">Show Password</label>
                             <!-- <span id="passwordError" class="error-message"></span> -->
 
                         <button type="submit" value="Login">Login</button>
