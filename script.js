@@ -82,7 +82,7 @@ $(document).ready(function () {
         passwordError = (password === "" || password.length < 4) ? "Field Password Correctly!" : (passwordError ? "Password must be at least 4 characters with:" + passwordError.slice(0, -1) : "");
         $('#passwordError').html(passwordError);
       
-        // Cek apakah ada pesan kesalahan
+        // Fetch API berdasarkan validasi username dan password
         if (!$('#usernameError').html() && !$('#passwordError').html()) {
             fetch('https://dummyjson.com/auth/login', {
                 method: 'POST',
