@@ -84,39 +84,30 @@ $(document).ready(function () {
       
         // Fetch API berdasarkan validasi username dan password
         if (!$('#usernameError').html() && !$('#passwordError').html()) {
-            fetch('https://dummyjson.com/auth/login', {
+            $.ajax({
+                url: 'https://dummyjson.com/auth/login',
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
+                contentType: 'application/json',
+                data: JSON.stringify({
                     username: username,
                     password: password,
-                })
-            })
-            .then(res => {
-                console.log("Response status:", res.status);
-                // Pastikan untuk mengembalikan res.json() agar dapat digunakan pada then selanjutnya
-                return res.json();
-            })
-            .then(data => {
-                console.log("Data from API:", data);
-                // Check if the response status is 200
-                if (data && data.token) {
-                    // Tampilkan data di console
-                    console.log("Login successful. Redirecting...");
-
-                    // Redirect to the about page
-                    window.location.href = 'about.html';
-                } else {
-                    // Handle unsuccessful login
-                    alert("Login failed. Please try again.");
+                }),
+                success: function (data, xhr) {
+                    console.log("Response status:", xhr.status);
+                    console.log("Data from API:", data);
+                    
+                    if (data && data.token) {
+                        console.log("Login successful. Redirecting...");
+                        window.location.href = 'about.html';
+                    } else {
+                        alert("Login failed. Please try again.");
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.error("Error connecting to the authentication API:", errorThrown);
+                    alert("Error connecting to the authentication API. Please try again later.");
                 }
-            })
-            .catch(error => {
-                // Handle Fetch API error
-                console.error("Error connecting to the authentication API:", error);
-                alert("Error connecting to the authentication API. Please try again later.");
             });
-
         }
     });
       
