@@ -65,9 +65,10 @@ $(document).ready(function () {
         $('#passwordError').html("");
       
         // Validasi username
+        
         var username = $('#username').val();
         if (username === "" || $.trim(username) === "") {
-          $('#usernameError').html("Field Username Correctly!");
+          $('#usernameError').html("Field Username Correctly!" );
         }
       
         // Validasi password
@@ -83,8 +84,39 @@ $(document).ready(function () {
       
         // Cek apakah ada pesan kesalahan
         if (!$('#usernameError').html() && !$('#passwordError').html()) {
-            // Jika tidak ada kesalahan, arahkan ke halaman about.html
-            window.location.href = 'about.html';
+            fetch('https://dummyjson.com/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                })
+            })
+            .then(res => {
+                console.log("Response status:", res.status);
+                // Pastikan untuk mengembalikan res.json() agar dapat digunakan pada then selanjutnya
+                return res.json();
+            })
+            .then(data => {
+                console.log("Data from API:", data);
+                // Check if the response status is 200
+                if (data && data.token) {
+                    // Tampilkan data di console
+                    console.log("Login successful. Redirecting...");
+
+                    // Redirect to the about page
+                    window.location.href = 'about.html';
+                } else {
+                    // Handle unsuccessful login
+                    alert("Login failed. Please try again.");
+                }
+            })
+            .catch(error => {
+                // Handle Fetch API error
+                console.error("Error connecting to the authentication API:", error);
+                alert("Error connecting to the authentication API. Please try again later.");
+            });
+
         }
     });
       
