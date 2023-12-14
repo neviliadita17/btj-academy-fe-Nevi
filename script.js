@@ -105,7 +105,7 @@ $(document).ready(function () {
                 },
                 error: function (xhr, textStatus, errorThrown) {
                     console.error("Error connecting to the authentication API:", errorThrown);
-                    alert("Error connecting to the authentication API. Please try again later.");
+                    alert("Error connecting to the authentication API. Please check your username and password.");
                 }
             });
         }
