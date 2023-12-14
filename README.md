@@ -114,6 +114,12 @@ Fungsi jQuery untuk memastikan bahwa kode JavaScript di dalamnya hanya dijalanka
     });
 
 ## Fetch API 
+#### Note : Username and Password user
+**- username: kminchelle** 
+
+**- password: 0lelplR**
+
+    
     if (!$('#usernameError').html() && !$('#passwordError').html()) {
         $.ajax({
             url: 'https://dummyjson.com/auth/login',
