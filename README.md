@@ -113,6 +113,62 @@ Fungsi jQuery untuk memastikan bahwa kode JavaScript di dalamnya hanya dijalanka
         $(this).toggleClass('zoomed');
     });
 
+## Fetch API 
+    if (!$('#usernameError').html() && !$('#passwordError').html()) {
+        $.ajax({
+            url: 'https://dummyjson.com/auth/login',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                username: username,
+                password: password,
+            }),
+            success: function (data, xhr) {
+                console.log("Response status:", xhr.status);
+                console.log("Data from API:", data);
+                    
+                if (data && data.token) {
+                    console.log("Login successful. Redirecting...");
+                    window.location.href = 'about.html';
+                } else {
+                    alert("Login failed. Please try again.");
+                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error("Error connecting to the authentication API:", errorThrown);
+                alert("Error connecting to the authentication API. Please try again later.");
+            }
+        });
+    }
+
+`if (!$('#usernameError').html() && !$('#passwordError').html()) {`
+This tests whether there is no text (empty) within the elements with the IDs `usernameError` and `passwordError`. If this condition is true, then the code block inside it will be executed
+
+`$.ajax({ ... });`
+Declaration of an AJAX call, subsequently filled with configurations that will send an HTTP POST request to the URL 'https://dummyjson.com/auth/login'
+
+success: function (data, xhr) { ... }`
+- A function that will be executed if the request is successful (HTTP status 200)
+- Contains the parameter `data`, which is the response data from the server, and `xhr`, which contains the XMLHttpRequest object providing additional information about the response status (`xhr.status`)
+
+`console.log("Response status:", xhr.status);`
+Prints the response status to the console
+
+`console.log("Data from API:", data);`
+Prints the response data from the server to the console
+
+`if (data && data.token) { ... } else { ... }`
+If the server response has a `token` property, then the login is considered successful, and the user will be redirected to 'about.html'. If not, an error message is displayed
+
+`error: function (xhr, textStatus, errorThrown) { ... }`
+If the request encounters an error. The parameter `xhr` contains the XMLHttpRequest object providing information about the error, such as the error status (`xhr.status`), `textStatus` contains the error status in text form, and `errorThrown` contains a text description of the error
+
+`console.error("Error connecting to the authentication API:", errorThrown);`
+Prints the error message to the console if there is an error in the AJAX request
+
+`alert("Error connecting to the authentication API. Please try again later.");`
+Displays an error message through an alert dialog if there is an error in the AJAX request
+
 # --------------------------------------------------
 # Java Script - Day 4
 #### Note : For readme day 1, 2, 3 please check on branch day 3
